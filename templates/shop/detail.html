@@ -1,0 +1,20 @@
+{% extends 'shop/index.html' %}
+{% block content %}
+    <div class="center-block">
+        <img src="{{ object.image.url }}" alt="{{ object.item }}" height="70%" width="70%">
+        <h2>Price is ${{ object.price }}</h2>
+        <br>
+        <h3>Description</h3>
+        <p>{{ object.description }}</p>
+        <p>Dorm information: {{ object.contact_information }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Published: {{ object.pub_date }}</p>
+        {% if user.snapchat %}
+            <p>Snapchat: {{ user.snapchat }}</p>
+        {% else %}
+            <p>Snapchat: None</p>
+        {% endif %}
+        <br>
+        <p>Id of publication: {{ object.id }}</p>
+    </div>
+{% endblock %}
